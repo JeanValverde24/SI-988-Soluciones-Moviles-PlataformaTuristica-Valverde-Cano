@@ -1,4 +1,4 @@
-#Mon Oct 21 14:23:39 PET 2024
+#Tue Oct 22 11:36:33 PET 2024
 base.0=C\:\\Users\\Jean_\\Desktop\\Moviles-Proyecto\\movilesii\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\Jean_\\Desktop\\Moviles-Proyecto\\movilesii\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\Jean_\\Desktop\\Moviles-Proyecto\\movilesii\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
