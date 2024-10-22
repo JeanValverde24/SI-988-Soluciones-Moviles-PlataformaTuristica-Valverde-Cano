@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'VistaPrincipal.dart'; // Importa la vista principal
+import 'RegistroDueno.dart'; // Asegúrate de importar RegistroDueno
+import 'VistaPrincipal.dart'; // Para redirigir a VistaPrincipal
 
 class LoginDueno extends StatefulWidget {
   const LoginDueno({super.key});
@@ -14,93 +15,60 @@ class _LoginDuenoState extends State<LoginDueno> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Fondo de pantalla
       body: Stack(
         children: [
-          // Imagen de fondo
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(
-                    'images/background.png'), // Ruta de la imagen de fondo
-                fit: BoxFit
-                    .cover, // Asegura que la imagen cubra toda la pantalla
+                image: AssetImage('images/background.png'),
+                fit: BoxFit.cover,
               ),
             ),
           ),
-          // Ajustar el contenido cuando aparece el teclado y centrar en el área guinda
           Center(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
               child: Column(
-                mainAxisSize: MainAxisSize.min, // Minimiza la altura ocupada
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  const SizedBox(
-                      height:
-                          130), // Ajustamos para no tocar las ondas superiores
-
-                  // Campo de correo electrónico
+                  const SizedBox(height: 130),
                   const TextField(
                     decoration: InputDecoration(
                       labelText: "Correo electrónico",
-                      labelStyle: TextStyle(
-                          color: Colors
-                              .yellow), // Color de la etiqueta en amarillo
+                      labelStyle: TextStyle(color: Colors.yellow),
                       border: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Colors.yellow), // Borde amarillo
+                        borderSide: BorderSide(color: Colors.yellow),
                       ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors
-                                .white), // Borde blanco cuando no está activo
+                        borderSide: BorderSide(color: Colors.white),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors.yellow), // Borde amarillo al enfocar
+                        borderSide: BorderSide(color: Colors.yellow),
                       ),
-                      prefixIcon: Icon(Icons.email,
-                          color: Colors.yellow), // Icono en amarillo
+                      prefixIcon: Icon(Icons.email, color: Colors.yellow),
                     ),
-                    style: TextStyle(
-                        color:
-                            Colors.white), // Color del texto dentro de la caja
+                    style: TextStyle(color: Colors.white),
                   ),
-                  const SizedBox(height: 20), // Espacio entre campos
-
-                  // Campo de contraseña
+                  const SizedBox(height: 20),
                   const TextField(
-                    obscureText: true, // Para que la contraseña no sea visible
+                    obscureText: true,
                     decoration: InputDecoration(
                       labelText: "Contraseña",
-                      labelStyle: TextStyle(
-                          color: Colors
-                              .yellow), // Color de la etiqueta en amarillo
+                      labelStyle: TextStyle(color: Colors.yellow),
                       border: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Colors.yellow), // Borde amarillo
+                        borderSide: BorderSide(color: Colors.yellow),
                       ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors
-                                .white), // Borde blanco cuando no está activo
+                        borderSide: BorderSide(color: Colors.white),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors.yellow), // Borde amarillo al enfocar
+                        borderSide: BorderSide(color: Colors.yellow),
                       ),
-                      prefixIcon: Icon(Icons.lock,
-                          color: Colors.yellow), // Icono en amarillo
+                      prefixIcon: Icon(Icons.lock, color: Colors.yellow),
                     ),
-                    style: TextStyle(
-                        color:
-                            Colors.white), // Color del texto dentro de la caja
+                    style: TextStyle(color: Colors.white),
                   ),
-                  const SizedBox(
-                      height:
-                          20), // Espacio entre el campo de contraseña y el botón
-
-                  // Botón de iniciar sesión con redirección a VistaPrincipal
+                  const SizedBox(height: 20),
                   GestureDetector(
                     onTapDown: (_) {
                       setState(() {
@@ -111,25 +79,20 @@ class _LoginDuenoState extends State<LoginDueno> {
                       setState(() {
                         isButtonPressed = false;
                       });
-                      // Redirigir a la vista principal
-                      Navigator.pushReplacement(
+                      Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const VistaPrincipal()),
+                          builder: (context) => const VistaPrincipal(),
+                        ),
                       );
                     },
                     child: AnimatedScale(
-                      scale: isButtonPressed
-                          ? 0.95
-                          : 1.0, // Efecto de escala al tocar el botón
+                      scale: isButtonPressed ? 0.95 : 1.0,
                       duration: const Duration(milliseconds: 100),
                       child: Container(
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
-                            colors: [
-                              Colors.redAccent,
-                              Colors.yellow
-                            ], // Degradado entre guinda y amarillo
+                            colors: [Colors.redAccent, Colors.yellow],
                           ),
                           borderRadius: BorderRadius.circular(30),
                         ),
@@ -137,25 +100,35 @@ class _LoginDuenoState extends State<LoginDueno> {
                             horizontal: 50, vertical: 15),
                         child: const Text(
                           "Iniciar sesión",
-                          style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.white), // Texto más grande y blanco
+                          style: TextStyle(fontSize: 18, color: Colors.white),
                         ),
                       ),
                     ),
                   ),
                   const SizedBox(height: 20),
-
-                  // Botón de crear cuenta
                   TextButton(
                     onPressed: () {
-                      // Aquí va la lógica de redirección a la vista de crear cuenta (si es necesario)
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RegistroDueno(),
+                        ),
+                      );
                     },
                     child: const Text(
                       "Crear cuenta",
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.yellowAccent), // Texto amarillo
+                      style:
+                          TextStyle(fontSize: 16, color: Colors.yellowAccent),
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      // Aquí irá la lógica para recuperar la contraseña
+                    },
+                    child: const Text(
+                      "Recuperar contraseña",
+                      style:
+                          TextStyle(fontSize: 16, color: Colors.yellowAccent),
                     ),
                   ),
                 ],
