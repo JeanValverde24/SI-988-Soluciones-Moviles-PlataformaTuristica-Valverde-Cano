@@ -4,7 +4,7 @@
             "outputFile": "com.example.movilesii.app-mergeDebugResources-24:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Jean_\\Desktop\\Moviles-Proyecto\\movilesii\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\Jean_\\SI-988-Soluciones-Moviles-PlataformaTuristica-Valverde-Cano\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
